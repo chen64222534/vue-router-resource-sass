@@ -1,10 +1,11 @@
 
 .header {
+  position: relative;
   font-weight: 200;
   color: rgb(255, 255, 255);
-  background-color: #2C6CA5;
-
-  .content-wraper {
+  background-color: rgba(7, 17, 27, 0.5);
+  overflow: hidden;
+  > .content-wraper {
     display: flex;
     position: relative;
     padding: 24px 12px 18px 24px;
@@ -102,26 +103,64 @@
     }
   }
 
-  .bullentin-wraper {
+  > .bullentin-wraper {
+    position: relative;
     height: 28px;
-    padding: 0 12px;
+    line-height: 28px;
+    padding: 0 22px 0 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     background-color: rgba(7, 17, 27, 0.2);
+    overflow: hidden;
 
     .bullentin-title {
       display: inline-block;
-      vertical-align: middle;
+      // 与middle，margin-top区别
+      //vertical-align: middle;
+      vertical-align: top;
       width: 22px;
       height: 12px;
+      margin-top: 7px;
       @include bg-image("bulletin");
       background-size: 22px 12px;
       background-repeat: no-repeat;
     }
 
     .bullentin-text {
+      vertical-align: top;
       line-height: 28px;
       margin: 0 4px;
       font-size: 10px;
     }
+
+    .icon-keyboard_arrow_right {
+      position: absolute;
+      right: 12px;
+      top: 8px;
+      font-size: 10px;
+    }
+  }
+
+  > .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(10px);
+  }
+
+  > .detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px);
+    background-color: rgba(7, 17, 27, 0.8);
+    overflow: auto;
+    z-index: 100;
 
   }
 }
