@@ -1,0 +1,127 @@
+
+.header {
+  font-weight: 200;
+  color: rgb(255, 255, 255);
+  background-color: #2C6CA5;
+
+  .content-wraper {
+    display: flex;
+    position: relative;
+    padding: 24px 12px 18px 24px;
+
+    .avatar {
+
+      img {
+        border-radius: 2px;
+      }
+    }
+
+    .content {
+      margin-left: 16px;
+
+      .title {
+        padding: 2px 0 8px;
+
+        .brand {
+          display: inline-block;
+          vertical-align: top;
+          width: 30px;
+          height: 18px;
+          margin-right: 6px;
+          @include bg-image("brand");
+          background-size: 30px 18px;
+          background-repeat: no-repeat;
+        }
+
+        .name {
+          line-height: 18px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+
+      .details {
+        line-height: 12px;
+        font-size: 12px;
+      }
+
+      .support {
+        padding: 10px 0 2px;
+
+        .icon {
+          display: inline-block;
+          vertical-align: bottom;
+          width: 12px;
+          height: 12px;
+          background-size: 12px;
+          background-repeat: no-repeat;
+
+          &.decrease {
+            @include bg-image("decrease_1");
+          }
+          &.discount {
+            @include bg-image("discount_1");
+          }
+          &.guarantee {
+            @include bg-image("guarantee_1");
+          }
+          &.invoice {
+            @include bg-image("invoice_1");
+          }
+          &.special {
+            @include bg-image("special_1");
+          }
+        }
+
+        .text {
+          line-height: 12px;
+          font-size: 10px;
+        }
+      }
+    }
+
+    .support-count {
+      position: absolute;
+      right: 12px;
+      bottom: 14px;
+      height: 24px;
+      line-height: 24px;
+      padding: 0 8px;
+      text-align: center;
+      font-size: 10px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 7px;
+
+      .count {
+        vertical-align: top;
+      }
+
+      .icon-keyboard_arrow_right {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  .bullentin-wraper {
+    height: 28px;
+    padding: 0 12px;
+    background-color: rgba(7, 17, 27, 0.2);
+
+    .bullentin-title {
+      display: inline-block;
+      vertical-align: middle;
+      width: 22px;
+      height: 12px;
+      @include bg-image("bulletin");
+      background-size: 22px 12px;
+      background-repeat: no-repeat;
+    }
+
+    .bullentin-text {
+      line-height: 28px;
+      margin: 0 4px;
+      font-size: 10px;
+    }
+
+  }
+}
