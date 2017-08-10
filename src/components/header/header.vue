@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="bullentin-wraper" >
+    <div class="bullentin-wraper"  @click="showDetail">
       <span class="bullentin-title"></span><span class="bullentin-text">{{seller.bulletin}}</span>
       <i class="icon-keyboard_arrow_right"></i>
     </div>
@@ -38,6 +38,12 @@
     </div>
 
     <div v-show="detailShow" class="detail">
+      <div class="detail-wrap">
+        <div class="detail-main">{{seller.bulletin}}</div>
+      </div>
+      <div class="detail-close">
+        <i class="icon-close"></i>
+      </div>
 
     </div>
   </div>
