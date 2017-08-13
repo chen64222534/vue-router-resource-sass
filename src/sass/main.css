@@ -128,23 +128,23 @@ body {
 
 /*components*/
 /*layout*/
-.content .tab {
+.l-content .l-tab {
   display: flex;
   width: 100%;
   height: 40px;
   line-height: 40px;
   border-bottom: 1px solid rgba(7, 17, 27, 0.1);
   position: relative; }
-  .content .tab .tab-item {
+  .l-content .l-tab .tab-item {
     flex: 1;
     text-align: center; }
-    .content .tab .tab-item a {
+    .l-content .l-tab .tab-item a {
       display: block;
       font-size: 1rem;
       color: #4d555d; }
-    .content .tab .tab-item .active {
+    .l-content .l-tab .tab-item .active {
       color: #f01414; }
-  .content .tab:after {
+  .l-content .l-tab:after {
     display: block;
     position: absolute;
     left: 0;
@@ -152,100 +152,108 @@ body {
     border-top: 1px solid rgba(7, 17, 27, 0.1);
     content: ''; }
   @media (min-device-pixel-ratio: 1.5) {
-    .content .tab::after {
+    .l-content .l-tab::after {
       transform: scaleY(0.7); } }
   @media (min-device-pixel-ratio: 2) {
-    .content .tab::after {
+    .l-content .l-tab::after {
       transform: scaleY(0.5); } }
 
-.header {
+.l-header {
   position: relative;
   font-weight: 200;
   color: white;
   background-color: rgba(7, 17, 27, 0.5);
   overflow: hidden; }
-  .header > .content-wraper {
+  .l-header__wrap {
     display: flex;
     position: relative;
     padding: 24px 12px 18px 24px; }
-    .header > .content-wraper .avatar img {
-      border-radius: 2px; }
-    .header > .content-wraper .content {
-      margin-left: 16px; }
-      .header > .content-wraper .content .title {
-        padding: 2px 0 8px; }
-        .header > .content-wraper .content .title .brand {
-          display: inline-block;
-          vertical-align: top;
-          width: 30px;
-          height: 18px;
-          margin-right: 6px;
-          background-image: url("../image/brand@2x.png");
-          background-size: 30px 18px;
-          background-repeat: no-repeat; }
-          @media (min-device-pixel-ratio: 3) {
-            .header > .content-wraper .content .title .brand {
-              background-image: url("../image/brand@3x.png"); } }
-        .header > .content-wraper .content .title .name {
-          line-height: 18px;
-          font-size: 16px;
-          font-weight: bold; }
-      .header > .content-wraper .content .details {
-        line-height: 12px;
-        font-size: 12px; }
-      .header > .content-wraper .content .support {
-        padding: 10px 0 2px; }
-        .header > .content-wraper .content .support .icon {
-          display: inline-block;
-          vertical-align: bottom;
-          width: 12px;
-          height: 12px;
-          background-size: 12px;
-          background-repeat: no-repeat; }
-          .header > .content-wraper .content .support .icon.decrease {
-            background-image: url("../image/decrease_1@2x.png"); }
-            @media (min-device-pixel-ratio: 3) {
-              .header > .content-wraper .content .support .icon.decrease {
-                background-image: url("../image/decrease_1@3x.png"); } }
-          .header > .content-wraper .content .support .icon.discount {
-            background-image: url("../image/discount_1@2x.png"); }
-            @media (min-device-pixel-ratio: 3) {
-              .header > .content-wraper .content .support .icon.discount {
-                background-image: url("../image/discount_1@3x.png"); } }
-          .header > .content-wraper .content .support .icon.guarantee {
-            background-image: url("../image/guarantee_1@2x.png"); }
-            @media (min-device-pixel-ratio: 3) {
-              .header > .content-wraper .content .support .icon.guarantee {
-                background-image: url("../image/guarantee_1@3x.png"); } }
-          .header > .content-wraper .content .support .icon.invoice {
-            background-image: url("../image/invoice_1@2x.png"); }
-            @media (min-device-pixel-ratio: 3) {
-              .header > .content-wraper .content .support .icon.invoice {
-                background-image: url("../image/invoice_1@3x.png"); } }
-          .header > .content-wraper .content .support .icon.special {
-            background-image: url("../image/special_1@2x.png"); }
-            @media (min-device-pixel-ratio: 3) {
-              .header > .content-wraper .content .support .icon.special {
-                background-image: url("../image/special_1@3x.png"); } }
-        .header > .content-wraper .content .support .text {
-          line-height: 12px;
-          font-size: 10px; }
-    .header > .content-wraper .support-count {
-      position: absolute;
-      right: 12px;
-      bottom: 14px;
-      height: 24px;
-      line-height: 24px;
-      padding: 0 8px;
-      text-align: center;
-      font-size: 10px;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 7px; }
-      .header > .content-wraper .support-count .count {
-        vertical-align: top; }
-      .header > .content-wraper .support-count .icon-keyboard_arrow_right {
-        margin-left: 2px; }
-  .header > .bullentin-wraper {
+  .l-header__avatar img {
+    border-radius: 2px; }
+  .l-header__content {
+    margin-left: 16px; }
+    .l-header__content .c-content__title {
+      padding: 2px 0 8px; }
+    .l-header__content .c-content__brand {
+      display: inline-block;
+      vertical-align: top;
+      width: 30px;
+      height: 18px;
+      margin-right: 6px;
+      background-image: url("../image/brand@2x.png");
+      background-size: 30px 18px;
+      background-repeat: no-repeat; }
+      @media (min-device-pixel-ratio: 3) {
+        .l-header__content .c-content__brand {
+          background-image: url("../image/brand@3x.png"); } }
+    .l-header__content .c-content__name {
+      line-height: 18px;
+      font-size: 16px;
+      font-weight: bold; }
+    .l-header__content .c-content__details {
+      line-height: 12px;
+      font-size: 12px; }
+    .l-header__content .c-content__support {
+      padding: 10px 0 2px; }
+    .l-header__content .c-content__icon {
+      display: inline-block;
+      vertical-align: bottom;
+      width: 12px;
+      height: 12px;
+      background-size: 12px;
+      background-repeat: no-repeat; }
+      .l-header__content .c-content__icon.decrease {
+        background-image: url("../image/decrease_1@2x.png"); }
+        @media (min-device-pixel-ratio: 3) {
+          .l-header__content .c-content__icon.decrease {
+            background-image: url("../image/decrease_1@3x.png"); } }
+      .l-header__content .c-content__icon.discount {
+        background-image: url("../image/discount_1@2x.png"); }
+        @media (min-device-pixel-ratio: 3) {
+          .l-header__content .c-content__icon.discount {
+            background-image: url("../image/discount_1@3x.png"); } }
+      .l-header__content .c-content__icon.guarantee {
+        background-image: url("../image/guarantee_1@2x.png"); }
+        @media (min-device-pixel-ratio: 3) {
+          .l-header__content .c-content__icon.guarantee {
+            background-image: url("../image/guarantee_1@3x.png"); } }
+      .l-header__content .c-content__icon.invoice {
+        background-image: url("../image/invoice_1@2x.png"); }
+        @media (min-device-pixel-ratio: 3) {
+          .l-header__content .c-content__icon.invoice {
+            background-image: url("../image/invoice_1@3x.png"); } }
+      .l-header__content .c-content__icon.special {
+        background-image: url("../image/special_1@2x.png"); }
+        @media (min-device-pixel-ratio: 3) {
+          .l-header__content .c-content__icon.special {
+            background-image: url("../image/special_1@3x.png"); } }
+    .l-header__content .c-content__text {
+      line-height: 12px;
+      font-size: 10px; }
+  .l-header__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: blur(10px); }
+  .l-header .c-support-count {
+    position: absolute;
+    right: 12px;
+    bottom: 14px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 8px;
+    text-align: center;
+    font-size: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 7px; }
+    .l-header .c-support-count__count {
+      vertical-align: top; }
+    .l-header .c-support-count .icon-keyboard_arrow_right {
+      margin-left: 2px; }
+  .l-header .c-bullentin {
     position: relative;
     height: 28px;
     line-height: 28px;
@@ -254,7 +262,7 @@ body {
     text-overflow: ellipsis;
     background-color: rgba(7, 17, 27, 0.2);
     overflow: hidden; }
-    .header > .bullentin-wraper .bullentin-title {
+    .l-header .c-bullentin__title {
       display: inline-block;
       vertical-align: top;
       width: 22px;
@@ -264,46 +272,47 @@ body {
       background-size: 22px 12px;
       background-repeat: no-repeat; }
       @media (min-device-pixel-ratio: 3) {
-        .header > .bullentin-wraper .bullentin-title {
+        .l-header .c-bullentin__title {
           background-image: url("../image/bulletin@3x.png"); } }
-    .header > .bullentin-wraper .bullentin-text {
+    .l-header .c-bullentin__text {
       vertical-align: top;
       line-height: 28px;
       margin: 0 4px;
       font-size: 10px; }
-    .header > .bullentin-wraper .icon-keyboard_arrow_right {
+    .l-header .c-bullentin .icon-keyboard_arrow_right {
       position: absolute;
       right: 12px;
       top: 8px;
       font-size: 10px; }
-  .header > .background {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    filter: blur(10px); }
-  .header > .detail {
+  .l-header .l-detail {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(7, 17, 27, 0.8);
     overflow: auto;
-    z-index: 100;
-    background-color: rgba(7, 17, 27, 0.8); }
-    .header > .detail > .detail-wrap {
-      min-height: 100%; }
-      .header > .detail > .detail-wrap > .detail-main {
-        padding: 64px 36px; }
-    .header > .detail > .detail-close {
+    z-index: 100; }
+    .l-header .l-detail__wrap {
+      min-height: 100vh; }
+    .l-header .l-detail__main {
+      padding: 64px 36px; }
+    .l-header .l-detail__name {
+      height: 32px;
+      line-height: 32px;
+      margin-bottom: 16px;
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center; }
+    .l-header .l-detail__close {
       position: relative;
       width: 32px;
       height: 32px;
       margin: -64px auto 0 auto;
-      font-size: 32px; }
-      .header > .detail > .detail-close > .icon-close {
-        color: rgba(255, 255, 255, 0.5); }
+      font-size: 32px;
+      clear: both;
+      z-index: 200; }
+    .l-header .l-detail .icon__close {
+      color: rgba(255, 255, 255, 0.5); }
 
 /*# sourceMappingURL=main.css.map */
