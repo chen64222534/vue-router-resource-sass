@@ -13,12 +13,13 @@
       </div>
     </div>
     <router-view></router-view>
+
   </div>
 
 </template>
 
 <script>
-  import header from './components/header/header.vue';
+  import header from './components/header.vue';
 
   const ERR_OK = 0;
 

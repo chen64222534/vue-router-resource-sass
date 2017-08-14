@@ -2,9 +2,12 @@
 @import "base/reset";
 @import "base/icon";
 
-/*components*/
-@import 'components/_mixin';
+/*common*/
+@import "common/mixin";
+@import "common/star";
+@import "common/line";
 
 /*layout*/
-@import "layout/_App";
+@import "layout/App";
 @import "layout/header";
+@import "layout/goods";

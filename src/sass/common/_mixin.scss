@@ -1,0 +1,84 @@
+@mixin border-1px {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid rgba(7, 17, 27, 0.1);
+    content: '';
+  }
+  @media (min-device-pixel-ratio: 1.5){
+    &{
+      &::after{
+        transform: scaleY(0.7);
+      }
+    }
+  }
+
+  @media (min-device-pixel-ratio: 2){
+    &{
+      &::after{
+        transform: scaleY(0.5);
+      }
+    }
+  }
+}
+
+
+
+
+@mixin bg-image($url){
+  background-image: url("../image/"+ $url + "@2x.png");
+  @media(min-device-pixel-ratio: 3){
+    background-image: url("../image/"+ $url + "@3x.png");
+  }
+}
+
+
+@mixin star-img($starSize, $size, $right){
+  .star-item {
+    width: $size * 5px;
+    height: $size * 5px;
+    margin-right: $right+px;
+    background-size: $size * 5px $size * 5px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.on {
+      @include bg-image("star" + $starSize +"_on");
+    }
+    &.half {
+      @include bg-image("star" + $starSize +"_half");
+    }
+    &.off {
+      @include bg-image("star" + $starSize +"_off");
+    }
+  }
+}
+
+@mixin privilege-icon($size, $img){
+
+  display: inline-block;
+  vertical-align: bottom;
+  width: $size;
+  height: $size;
+  background-size: $size;
+  background-repeat: no-repeat;
+
+  &.decrease {
+    @include bg-image("decrease_" + $img);
+  }
+  &.discount {
+    @include bg-image("discount_" + $img);
+  }
+  &.guarantee {
+    @include bg-image("guarantee_" + $img);
+  }
+  &.invoice {
+    @include bg-image("invoice_" + $img);
+  }
+  &.special {
+    @include bg-image("special_" + $img);
+  }
+}

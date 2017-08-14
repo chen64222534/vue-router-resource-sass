@@ -1,0 +1,17 @@
+.star {
+  font-size: 0;
+
+  &-item {
+    display: inline-block;
+    background-repeat: no-repeat;
+  }
+  &.star-24 {
+    @include star-img(24, 2, 3);
+  }
+  &.star-36 {
+    @include star-img(36, 3, 6);
+  }
+  &.star-48 {
+    @include star-img(48, 4, 22);
+  }
+}
