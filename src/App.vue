@@ -26,7 +26,8 @@
   export default {
     data () {
       return {
-        seller: {}
+        seller: {},
+        goods: {}
       };
     },
     created () {
@@ -38,8 +39,7 @@
         }
       }, (response) => {
       }
-    )
-      ;
+    );
     },
     components: {
       'v-header': header

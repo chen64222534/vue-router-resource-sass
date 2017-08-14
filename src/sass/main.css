@@ -451,4 +451,16 @@ body {
         line-height: 16px;
         margin-left: 6px; }
 
+.l-goods {
+  display: flex;
+  position: absolute;
+  top: 180px;
+  bottom: 56px;
+  width: 100%;
+  overflow: hidden; }
+  .l-goods__sidebar {
+    flex: 0 0 80px; }
+  .l-goods__food {
+    flex: 1; }
+
 /*# sourceMappingURL=main.css.map */
