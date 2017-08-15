@@ -1,0 +1,11 @@
+.c-icon{
+  &__1{
+    @include privilege-icon(12px, 1);
+  }
+  &__2{
+    @include privilege-icon(16px, 2);
+  }
+  &__3{
+    @include privilege-icon(14px, 3);
+  }
+}

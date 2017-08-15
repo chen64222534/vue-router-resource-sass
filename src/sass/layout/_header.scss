@@ -55,9 +55,9 @@
     &__support {
       padding: 10px 0 2px;
     }
-    &__icon {
-      @include privilege-icon(12px, 1);
-    }
+    //&__icon {
+    //  @include privilege-icon(12px, 1);
+    //}
     &__text {
       line-height: 12px;
       font-size: 10px;
@@ -193,9 +193,9 @@
             margin-bottom: 0;
           }
         }
-        &-icon {
-          @include privilege-icon(16px, 2);
-        }
+        //&-icon {
+        //  @include privilege-icon(16px, 2);
+        //}
         &-text {
           line-height: 24px;
           font-size: 12px;

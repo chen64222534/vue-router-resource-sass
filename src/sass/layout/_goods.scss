@@ -6,10 +6,17 @@
   width: 100%;
   overflow: hidden;
   &__sidebar {
+    display: flex;
     flex: 0 0 80px;
-
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 200;
+    color: rgb(240, 20, 20);
     &-item{
-
+      flex: 1;
+      line-height: 14px;
+      padding: 0 12px;
+      background-color: #F3F5F7;
     }
   }
   &__food{

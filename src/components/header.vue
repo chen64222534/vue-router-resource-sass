@@ -21,7 +21,10 @@
         </div>
 
         <div v-if="seller.supports" class="c-content__support">
-          <span class="c-content__icon" :class="this.classMap[seller.supports[0].type]"></span>
+          <!--非组件写法-->
+          <!--<span class="c-content__icon" :class="this.classMap[seller.supports[0].type]"></span>-->
+          <!--textIcon组件化后-->
+          <v-icon :iconType="seller.supports[0].type" :iconSize="1"></v-icon>
           <span class="c-content__text">{{seller.supports[0].description}}</span>
         </div>
 
@@ -62,9 +65,11 @@
                 <span class="c-notice__title-name">优惠信息</span>
                 <span class="c-notice__title-line"></span>
               </div>
-              <div class="c-notice__content"  >
+              <div class="c-notice__content" >
                 <div class="c-notice__content-item" v-for=" item in seller.supports ">
-                  <span class="c-notice__content-icon" :class="classMap[item.type]"></span>
+                  <!--<span class="c-notice__content-icon" :class="classMap[item.type]"></span>-->
+                  <!--textIcon组件化后-->
+                  <v-icon :iconType="item.type" :iconSize="2"></v-icon>
                   <span class="c-notice__content-introduce">{{item.description}}</span>
                 </div>
               </div>
@@ -100,6 +105,7 @@
 
 <script>
   import star from '../common/star.vue';
+  import textIcon from '../common/textIcon.vue';
 
   export default {
     props: {
@@ -120,11 +126,9 @@
         this.detailShow = false;
       }
     },
-    created () {
-      this.classMap = ['decrease', 'discount', 'guarantee', 'invoice', 'special'];
-    },
     components: {
-      'v-star': star
+      'v-star': star,
+      'v-icon': textIcon
     }
   };
 </script>

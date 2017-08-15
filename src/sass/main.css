@@ -199,6 +199,103 @@ body {
         .star.star-48 .star-item.off {
           background-image: url("../image/star48_off@3x.png"); } }
 
+.c-icon__1 {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 12px;
+  height: 12px;
+  background-size: 12px;
+  background-repeat: no-repeat; }
+  .c-icon__1.decrease {
+    background-image: url("../image/decrease_1@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__1.decrease {
+        background-image: url("../image/decrease_1@3x.png"); } }
+  .c-icon__1.discount {
+    background-image: url("../image/discount_1@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__1.discount {
+        background-image: url("../image/discount_1@3x.png"); } }
+  .c-icon__1.guarantee {
+    background-image: url("../image/guarantee_1@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__1.guarantee {
+        background-image: url("../image/guarantee_1@3x.png"); } }
+  .c-icon__1.invoice {
+    background-image: url("../image/invoice_1@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__1.invoice {
+        background-image: url("../image/invoice_1@3x.png"); } }
+  .c-icon__1.special {
+    background-image: url("../image/special_1@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__1.special {
+        background-image: url("../image/special_1@3x.png"); } }
+.c-icon__2 {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+  background-repeat: no-repeat; }
+  .c-icon__2.decrease {
+    background-image: url("../image/decrease_2@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__2.decrease {
+        background-image: url("../image/decrease_2@3x.png"); } }
+  .c-icon__2.discount {
+    background-image: url("../image/discount_2@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__2.discount {
+        background-image: url("../image/discount_2@3x.png"); } }
+  .c-icon__2.guarantee {
+    background-image: url("../image/guarantee_2@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__2.guarantee {
+        background-image: url("../image/guarantee_2@3x.png"); } }
+  .c-icon__2.invoice {
+    background-image: url("../image/invoice_2@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__2.invoice {
+        background-image: url("../image/invoice_2@3x.png"); } }
+  .c-icon__2.special {
+    background-image: url("../image/special_2@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__2.special {
+        background-image: url("../image/special_2@3x.png"); } }
+.c-icon__3 {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 14px;
+  height: 14px;
+  background-size: 14px;
+  background-repeat: no-repeat; }
+  .c-icon__3.decrease {
+    background-image: url("../image/decrease_3@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__3.decrease {
+        background-image: url("../image/decrease_3@3x.png"); } }
+  .c-icon__3.discount {
+    background-image: url("../image/discount_3@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__3.discount {
+        background-image: url("../image/discount_3@3x.png"); } }
+  .c-icon__3.guarantee {
+    background-image: url("../image/guarantee_3@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__3.guarantee {
+        background-image: url("../image/guarantee_3@3x.png"); } }
+  .c-icon__3.invoice {
+    background-image: url("../image/invoice_3@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__3.invoice {
+        background-image: url("../image/invoice_3@3x.png"); } }
+  .c-icon__3.special {
+    background-image: url("../image/special_3@2x.png"); }
+    @media (min-device-pixel-ratio: 3) {
+      .c-icon__3.special {
+        background-image: url("../image/special_3@3x.png"); } }
+
 /*layout*/
 .l-content .l-tab {
   display: flex;
@@ -275,38 +372,6 @@ body {
     font-size: 12px; }
   .l-header .c-content__support {
     padding: 10px 0 2px; }
-  .l-header .c-content__icon {
-    display: inline-block;
-    vertical-align: bottom;
-    width: 12px;
-    height: 12px;
-    background-size: 12px;
-    background-repeat: no-repeat; }
-    .l-header .c-content__icon.decrease {
-      background-image: url("../image/decrease_1@2x.png"); }
-      @media (min-device-pixel-ratio: 3) {
-        .l-header .c-content__icon.decrease {
-          background-image: url("../image/decrease_1@3x.png"); } }
-    .l-header .c-content__icon.discount {
-      background-image: url("../image/discount_1@2x.png"); }
-      @media (min-device-pixel-ratio: 3) {
-        .l-header .c-content__icon.discount {
-          background-image: url("../image/discount_1@3x.png"); } }
-    .l-header .c-content__icon.guarantee {
-      background-image: url("../image/guarantee_1@2x.png"); }
-      @media (min-device-pixel-ratio: 3) {
-        .l-header .c-content__icon.guarantee {
-          background-image: url("../image/guarantee_1@3x.png"); } }
-    .l-header .c-content__icon.invoice {
-      background-image: url("../image/invoice_1@2x.png"); }
-      @media (min-device-pixel-ratio: 3) {
-        .l-header .c-content__icon.invoice {
-          background-image: url("../image/invoice_1@3x.png"); } }
-    .l-header .c-content__icon.special {
-      background-image: url("../image/special_1@2x.png"); }
-      @media (min-device-pixel-ratio: 3) {
-        .l-header .c-content__icon.special {
-          background-image: url("../image/special_1@3x.png"); } }
   .l-header .c-content__text {
     line-height: 12px;
     font-size: 10px; }
@@ -411,38 +476,6 @@ body {
         margin-bottom: 12px; }
         .l-header .l-detail .c-notice__content-item:last-child {
           margin-bottom: 0; }
-      .l-header .l-detail .c-notice__content-icon {
-        display: inline-block;
-        vertical-align: bottom;
-        width: 16px;
-        height: 16px;
-        background-size: 16px;
-        background-repeat: no-repeat; }
-        .l-header .l-detail .c-notice__content-icon.decrease {
-          background-image: url("../image/decrease_2@2x.png"); }
-          @media (min-device-pixel-ratio: 3) {
-            .l-header .l-detail .c-notice__content-icon.decrease {
-              background-image: url("../image/decrease_2@3x.png"); } }
-        .l-header .l-detail .c-notice__content-icon.discount {
-          background-image: url("../image/discount_2@2x.png"); }
-          @media (min-device-pixel-ratio: 3) {
-            .l-header .l-detail .c-notice__content-icon.discount {
-              background-image: url("../image/discount_2@3x.png"); } }
-        .l-header .l-detail .c-notice__content-icon.guarantee {
-          background-image: url("../image/guarantee_2@2x.png"); }
-          @media (min-device-pixel-ratio: 3) {
-            .l-header .l-detail .c-notice__content-icon.guarantee {
-              background-image: url("../image/guarantee_2@3x.png"); } }
-        .l-header .l-detail .c-notice__content-icon.invoice {
-          background-image: url("../image/invoice_2@2x.png"); }
-          @media (min-device-pixel-ratio: 3) {
-            .l-header .l-detail .c-notice__content-icon.invoice {
-              background-image: url("../image/invoice_2@3x.png"); } }
-        .l-header .l-detail .c-notice__content-icon.special {
-          background-image: url("../image/special_2@2x.png"); }
-          @media (min-device-pixel-ratio: 3) {
-            .l-header .l-detail .c-notice__content-icon.special {
-              background-image: url("../image/special_2@3x.png"); } }
       .l-header .l-detail .c-notice__content-text, .l-header .l-detail .c-notice__content-introduce {
         line-height: 24px;
         font-size: 12px;
@@ -459,7 +492,17 @@ body {
   width: 100%;
   overflow: hidden; }
   .l-goods__sidebar {
-    flex: 0 0 80px; }
+    display: flex;
+    flex: 0 0 80px;
+    flex-direction: column;
+    font-size: 12px;
+    font-weight: 200;
+    color: #f01414; }
+    .l-goods__sidebar-item {
+      flex: 1;
+      line-height: 14px;
+      padding: 0 12px;
+      background-color: #F3F5F7; }
   .l-goods__food {
     flex: 1; }
 
