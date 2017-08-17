@@ -1,11 +1,12 @@
-@mixin border-1px {
+@mixin border-1px ($rgba) {
   position: relative;
   &:after {
     display: block;
     position: absolute;
     left: 0;
     bottom: 0;
-    border-top: 1px solid rgba(7, 17, 27, 0.1);
+    width: 100%;
+    border-top: 1px solid $rgba;
     content: '';
   }
   @media (min-device-pixel-ratio: 1.5){
@@ -81,4 +82,11 @@
   &.special {
     @include bg-image("special_" + $img);
   }
+}
+
+@mixin cut-line ($top) {
+  flex: 1;
+  position: relative;
+  border-bottom:1px solid rgba(255, 255, 255, 0.2) ;
+  top:$top+px;
 }
