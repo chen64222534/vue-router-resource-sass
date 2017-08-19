@@ -20,21 +20,19 @@
       line-height:14px;
       padding: 0 12px;
       background-color: #F3F5F7;
-      &:hover{
+      &.active{
         color: rgb(7, 17, 27);
         background-color: #FDFDFE;
       }
     }
 
     .c-sidebar {
-      overflow-y: scroll;
       &__text {
         display: table-cell;
         width: 56px;
         vertical-align: middle;
         @include border-1px(rgba(7, 17, 27, 0.1));
       }
-
     }
 
     .c-icon{
@@ -44,7 +42,7 @@
 
   &__food {
     flex: 1;
-    overflow-y: scroll;
+    //overflow-y: scroll;
 
     .c-food{
       &__title{
@@ -56,11 +54,14 @@
         border-left: 4px solid #d9dde1;
         background-color: #F3F5F7;
       }
-      &__list-item{
+      &__item{
         display: flex;
         padding: 18px 0;
         margin: 0 18px;
         @include border-1px(rgba(7, 17, 27, 0.1));
+        &:last-child{
+          @include border-1px(rgba(7, 17, 27, 0));
+        }
       }
       &__icon{
         flex: 0 0 57px;
@@ -104,6 +105,14 @@
     }
   }
 
-
+  &__shopcart{
+    position: fixed;
+    bottom:0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: 48px;
+    background-color: #141d27;
+  }
 
 }
