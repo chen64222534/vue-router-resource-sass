@@ -2,20 +2,19 @@
   <div class="c-shopcart">
     <div class="c-shopcart__leftContent">
       <div class="c-shopcart__logo">
-        <div class="c-shopcart__logo-icon">
-          <span class="icon-shopping_cart"></span>
+        <div class="c-shopcart__logo-icon" :class="{'highlight':countState}">
+          <span class="icon-shopping_cart" :class="{'highlight':countState}"></span>
         </div>
-        <div class="c-shopcart__count">{{totalCount}}</div>
+        <div class="c-shopcart__count" v-show="countState">{{totalCount}}</div>
       </div>
       <div class="c-shopcart__total">
-        <span class="c-shopcart__price">￥{{totalPrice}}</span>
+        <span class="c-shopcart__price" :class="{'highlight':countState}">￥{{totalPrice}}</span>
         <span class="c-shopcart__extra">另需配送费￥{{deliveryPrice}}元</span>
       </div>
-
     </div>
     <div class="c-shopcart__rightContent">
-      <div class="c-shopcart__explain">
-        ￥{{minPrice}}起送
+      <div class="c-shopcart__explain" :class="payClass">
+        {{payState}}
       </div>
     </div>
   </div>
@@ -27,9 +26,7 @@
       selectFoods: {
         type: Array,
         default () {
-          return [{price: 10,
-            count: 4}, {price: 20,
-              count: 1}];
+          return [];
         }
       },
       deliveryPrice: {
@@ -55,7 +52,32 @@
           count += food.count;
         });
         return count;
+      },
+      countState () {
+        if (this.totalCount > 0) {
+          return true;
+        }
+        return false;
+      },
+      payState () {
+        if (this.totalCount === 0) {
+          return `￥${this.minPrice}起送`;
+        } else if ((this.totalCount > 0) && (this.totalPrice < this.minPrice)) {
+          let dif = this.minPrice - this.totalPrice;
+          return `还差￥${dif}起送`;
+        } else {
+          return '去结算';
+        }
+      },
+      payClass () {
+        if (this.totalPrice >= this.minPrice) {
+          return 'c-shopcart__enough';
+        } else {
+          return 'c-shopcart__noenough';
+        }
       }
+    },
+    methods: {
     }
   };
 </script>

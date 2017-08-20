@@ -39,7 +39,6 @@
       margin-right: 2px;
     }
   }
-
   &__food {
     flex: 1;
     //overflow-y: scroll;
@@ -101,10 +100,13 @@
           text-decoration: line-through;
         }
       }
-
+      &__control{
+        position: absolute;
+        right: 18px;
+        bottom: 18px;
+      }
     }
   }
-
   &__shopcart{
     position: fixed;
     bottom:0;
@@ -114,5 +116,6 @@
     height: 48px;
     background-color: #141d27;
   }
+
 
 }

@@ -6,7 +6,6 @@
   }
   &__rightContent {
     flex: 0 0 105px;
-    background-color: #2B333B;
   }
   &__logo {
     display: inline-block;
@@ -26,12 +25,18 @@
       text-align: center;
       border-radius: 50%;
       background-color: rgba(255, 255, 255, 0.2);
-
+      &.highlight {
+        background-color: #009FDB;
+      }
       .icon-shopping_cart {
         line-height: 2;
         font-size: 24px;
         color: rgba(255, 255, 255, 0.4);
+        &.highlight {
+          color: rgb(255, 255, 255);
+        }
       }
+
     }
   }
   &__total {
@@ -48,6 +53,9 @@
     margin-right: 12px;
     padding-right: 12px;
     border-right: 1px solid rgba(255, 255, 255, 0.4);
+    &.highlight {
+      color: rgb(255, 255, 255);
+    }
   }
   &__extra {
     display: inline-block;
@@ -57,25 +65,32 @@
   }
   &__explain {
     line-height: 48px;
-    margin: 0 8px;
+    padding: 0 8px;
     text-align: center;
     font-size: 12px;
-    font-weight:700;
-    color: rgba(255, 255, 255, 0.4);
+    font-weight: 700;
   }
-  &__count{
+  &__noenough {
+    color: rgba(255, 255, 255, 0.4);
+    background-color: #2B333B;
+  }
+  &__enough {
+    color: rgb(255, 255, 255);
+    background-color: #00b43c;
+  }
+  &__count {
     position: absolute;
-    top:0;
-    right:0;
+    top: 0;
+    right: 0;
     width: 24px;
     height: 16px;
-    line-height: 2;
+    line-height: 1.5;
     text-align: center;
     font-size: 9px;
-    font-weight:700;
-    color:rgb(255, 255, 255);
+    font-weight: 700;
+    color: rgb(255, 255, 255);
     border-radius: 35%;
     background-color: rgb(240, 20, 20);
-    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
   }
 }

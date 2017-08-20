@@ -30,10 +30,8 @@
                   <span >￥{{food.price}}</span><span v-if="food.oldPrice" class="c-food__content-oldPrice">￥{{food.oldPrice}}</span>
                 </div>
               </div>
-              <div class="c-food__count">
-                <span class="c-food__count-subtarct"></span>
-                <span class="c-food__count-number"></span>
-                <span class="c-food__count-add"></span>
+              <div class="c-food__control">
+                <v-cartcontrol :food="food"></v-cartcontrol>
               </div>
             </li>
           </ul>
@@ -41,13 +39,14 @@
       </ul>
     </div>
     <div class="l-goods__shopcart">
-      <v-shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice"></v-shopcart>
+      <v-shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :select-foods="selectFoods"></v-shopcart>
     </div>
   </div>
 </template>
 
 <script>
   import shopcart from './shopcart.vue';
+  import cartcontrol from '../common/cartcontrol.vue';
   import textIcon from '../common/textIcon.vue';
   import BScroll from 'better-scroll';
 
@@ -80,6 +79,17 @@
           }
         }
         return 0;
+      },
+      selectFoods () {
+        let foods = [];
+        this.goods.forEach((good) => {
+          good.foods.forEach((food) => {
+            if (food.count) {
+              foods.push(food);
+            }
+          });
+        });
+        return foods;
       }
     },
     created () {
@@ -98,12 +108,14 @@
     },
     components: {
       'v-icon': textIcon,
-      'v-shopcart': shopcart
+      'v-shopcart': shopcart,
+      'v-cartcontrol': cartcontrol
     },
     methods: {
 //      better-scroll绑定模块，及监听scroll事件
       _initScroll () {
         this.foodScroll = new BScroll(this.$refs.lGoodsFood, {
+          click: true,
           probeType: 3
         });
         this.sidebarScroll = new BScroll(this.$refs.lGoodsSidebar, {

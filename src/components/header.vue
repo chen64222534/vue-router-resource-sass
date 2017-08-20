@@ -45,7 +45,7 @@
       <img width="100%" height="170%" :src="seller.avatar">
     </div>
 
-    <transition name="fade">
+    <transition name="fade-transition">
       <div v-show="detailShow" class="l-header__detail l-detail">
 
         <div class="l-detail__wrap">

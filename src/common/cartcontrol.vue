@@ -1,0 +1,43 @@
+<template>
+  <div class="c-cartcontrol">
+    <transition name="move-transition">
+      <div class="c-cartcontrol__subtract" v-show="food.count>0" @click="subtractCart">
+        <span class="icon-remove_circle_outline"></span>
+      </div>
+    </transition><div class="c-cartcontrol__number" v-show="food.count>0">{{food.count}}</div><div class="c-cartcontrol__add icon-add_circle" @click="addCart"></div>
+  </div>
+</template>
+
+<script>
+  import Vue from 'vue';
+
+  export default{
+    props: {
+      food: {
+        type: Object
+      }
+    },
+    created () {
+    },
+    methods: {
+      addCart (event) {
+        if (!event._constructed) {
+          return;
+        }
+        if (!this.food.count) {
+          Vue.set(this.food, 'count', 1);
+        } else {
+          this.food.count++;
+        }
+      },
+      subtractCart (event) {
+        if (!event._constructed) {
+          return;
+        }
+        if (this.food.count > 0) {
+          this.food.count--;
+        }
+      }
+    }
+  };
+</script>
