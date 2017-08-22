@@ -1,6 +1,27 @@
 <template>
-  <div class="c-shopcart">
-    <div class="c-shopcart__leftContent">
+
+  <div class="c-shopcart" >
+    <transition name="cart-transition">
+      <div class="c-shopcart__details" v-if="detailState">
+        <div class="c-shopcart__title">
+          购物车
+          <span class="c-shopcart__title-empty" @click="clearCart">清空</span>
+        </div>
+        <div class="c-shopcart__list" ref="cShopCart">
+          <ul  >
+            <li class="c-shopcart__item" v-for="item in selectFoods">
+              <span class="c-shopcart__name">{{item.name}}</span>
+              <span class="c-shopcart__item-price">￥{{item.price*item.count}}</span>
+              <div class="c-shopcart__item-control">
+                <v-cartcontrol :food="item"></v-cartcontrol>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </transition>
+    <div class="c-shopcart__leftContent" @click="toggleCart">
       <div class="c-shopcart__logo">
         <div class="c-shopcart__logo-icon" :class="{'highlight':countState}">
           <span class="icon-shopping_cart" :class="{'highlight':countState}"></span>
@@ -21,6 +42,9 @@
 </template>
 
 <script>
+  import cartcontrol from '../common/cartcontrol.vue';
+  import BScroll from 'better-scroll';
+
   export default{
     props: {
       selectFoods: {
@@ -38,7 +62,34 @@
         default: 0
       }
     },
+    data () {
+      return {
+        toggle: false
+      };
+    },
+    created () {
+
+    },
     computed: {
+      detailState () {
+        if (this.totalCount) {
+          if (this.toggle) {
+            if (!this.shopcartScroll) {
+              this.$nextTick(() => {
+                this.shopcartScroll = new BScroll(this.$refs.cShopCart, {
+                  click: true,
+                  scrollY: true
+                });
+              });
+            } else {
+              this.shopcartScroll.refresh();
+            }
+            return true;
+          }
+        } else {
+          this.toggle = false;
+        }
+      },
       totalPrice () {
         let price = 0;
         this.selectFoods.forEach((food) => {
@@ -77,7 +128,22 @@
         }
       }
     },
+    components: {
+      'v-cartcontrol': cartcontrol
+    },
     methods: {
+//      清空购物车
+      clearCart () {
+        this.selectFoods.forEach((food) => {
+          food.count = 0;
+        });
+      },
+      toggleCart () {
+        if (!this.totalCount) {
+          return;
+        }
+        this.toggle = !this.toggle;
+      }
     }
   };
 </script>

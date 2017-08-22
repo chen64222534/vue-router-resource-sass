@@ -80,6 +80,7 @@
         }
         return 0;
       },
+//      获取选中商品数量
       selectFoods () {
         let foods = [];
         this.goods.forEach((good) => {
