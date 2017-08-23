@@ -1,6 +1,9 @@
 <template>
 
   <div class="c-shopcart" >
+    <transition name="mark-transition" >
+      <div class="c-shopcart__mark" v-if="detailState" @click="toggleCart"></div>
+    </transition>
     <transition name="cart-transition">
       <div class="c-shopcart__details" v-if="detailState">
         <div class="c-shopcart__title">
@@ -18,7 +21,6 @@
             </li>
           </ul>
         </div>
-
       </div>
     </transition>
     <div class="c-shopcart__leftContent" @click="toggleCart">
@@ -68,7 +70,6 @@
       };
     },
     created () {
-
     },
     computed: {
       detailState () {
@@ -143,6 +144,7 @@
           return;
         }
         this.toggle = !this.toggle;
+        this.shopcartScroll = null;
       }
     }
   };

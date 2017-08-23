@@ -10,14 +10,13 @@
 
 <script>
   import Vue from 'vue';
+  import { eventHub } from '../bus';
 
   export default{
     props: {
       food: {
         type: Object
       }
-    },
-    created () {
     },
     methods: {
       addCart (event) {
@@ -29,6 +28,7 @@
         } else {
           this.food.count++;
         }
+        eventHub.$emit('cart-add', event.target);
       },
       subtractCart (event) {
         if (!event._constructed) {
