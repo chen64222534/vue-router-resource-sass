@@ -158,12 +158,32 @@
     font-size: 14px;
     color: rgb(7, 17, 27);
   }
-
+  &__ball{
+    position: fixed;
+    left: 31px;
+    bottom: 25px;
+    z-index: 200;
+    //transform: translatey(0);
+    //transform: translatex(50px);
+    &-inner{
+      width: 16px;
+      height: 16px;
+      border-radius:50% ;
+      background-color: rgb(0, 160, 220);
+    }
+  }
+  //缓动
   .mark-transition-enter-active, .mark-transition-leave-active, .cart-transition-enter-active, .cart-transition-leave-active {
     transition: all 0.5s;
   }
   .mark-transition-enter, .mark-transition-leave-to, .cart-transition-enter, .cart-transition-leave-to {
     transform: translatey(0);
     opacity: 0;
+  }
+  .ball-transition-enter-active, .ball-transition-leave-active {
+    transition: all 0.5s cubic-bezier(.48,-0.29,.75,.41);
+    .c-shopcart__ball-inner{
+      transition: all 0.5s linear;
+    }
   }
 }

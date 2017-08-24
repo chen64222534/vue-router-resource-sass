@@ -8,8 +8,9 @@
 @import "common/textIcon";
 @import "common/_cartcontrol";
 
-/*layout*/
-@import "layout/App";
-@import "layout/header";
-@import "layout/goods";
-@import "layout/shopcart";
+/*components*/
+@import "components/App";
+@import "components/header";
+@import "components/goods";
+@import "components/shopcart";
+@import "components/_fooddetails";

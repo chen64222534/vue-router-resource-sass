@@ -49,7 +49,6 @@
   import cartcontrol from '../common/cartcontrol.vue';
   import textIcon from '../common/textIcon.vue';
   import BScroll from 'better-scroll';
-  import { eventHub } from '../bus';
 
   const ERR_OK = 0;
 
@@ -108,11 +107,7 @@
       }
      );
 //      监听c-cartcontrol__add按键事件
-      eventHub.$on('cart-add', this._cartAdd);
-    },
-    beforeDestroy () {
-//      不清除事件监听会有什么问题???
-//      eventHub.$off('cart-add', this.cartAdd);
+//      eventHub.$on('cart-add', this._cartAdd);
     },
     components: {
       'v-icon': textIcon,
@@ -120,10 +115,6 @@
       'v-cartcontrol': cartcontrol
     },
     methods: {
-      _cartAdd (target) {
-        this.circle = target;
-        console.log(this.circle);
-      },
 //      better-scroll绑定模块，及监听scroll事件
       _initScroll () {
         this.foodScroll = new BScroll(this.$refs.lGoodsFood, {
@@ -133,7 +124,6 @@
         this.sidebarScroll = new BScroll(this.$refs.lGoodsSidebar, {
           click: true
         });
-
         this.foodScroll.on('scroll', (pos) => {
           this.scrollY = Math.abs(Math.round(pos.y));
         });

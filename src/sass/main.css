@@ -331,7 +331,7 @@ body {
   .c-cartcontrol .move-transition-enter .icon-remove_circle_outline, .c-cartcontrol .move-transition-leave-to .icon-remove_circle_outline {
     transform: rotatez(180deg); }
 
-/*layout*/
+/*components*/
 .l-content .l-tab {
   display: flex;
   width: 100%;
@@ -809,10 +809,24 @@ body {
     flex: 1;
     font-size: 14px;
     color: #07111b; }
+  .c-shopcart__ball {
+    position: fixed;
+    left: 31px;
+    bottom: 25px;
+    z-index: 200; }
+    .c-shopcart__ball-inner {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #00a0dc; }
   .c-shopcart .mark-transition-enter-active, .c-shopcart .mark-transition-leave-active, .c-shopcart .cart-transition-enter-active, .c-shopcart .cart-transition-leave-active {
     transition: all 0.5s; }
   .c-shopcart .mark-transition-enter, .c-shopcart .mark-transition-leave-to, .c-shopcart .cart-transition-enter, .c-shopcart .cart-transition-leave-to {
     transform: translatey(0);
     opacity: 0; }
+  .c-shopcart .ball-transition-enter-active, .c-shopcart .ball-transition-leave-active {
+    transition: all 0.5s cubic-bezier(0.48, -0.29, 0.75, 0.41); }
+    .c-shopcart .ball-transition-enter-active .c-shopcart__ball-inner, .c-shopcart .ball-transition-leave-active .c-shopcart__ball-inner {
+      transition: all 0.5s linear; }
 
 /*# sourceMappingURL=main.css.map */
