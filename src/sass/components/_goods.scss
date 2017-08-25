@@ -5,6 +5,8 @@
   bottom: 56px;
   width: 100%;
   overflow: hidden;
+
+
   &__sidebar {
     flex: 0 0 80px;
     //display: flex;
@@ -42,70 +44,6 @@
   &__food {
     flex: 1;
     //overflow-y: scroll;
-
-    .c-food{
-      &__title{
-        height: 26px;
-        line-height: 26px;
-        padding-left: 14px;
-        font-size: 12px;
-        color: rgb(147, 153, 159);
-        border-left: 4px solid #d9dde1;
-        background-color: #F3F5F7;
-      }
-      &__item{
-        display: flex;
-        padding: 18px 0;
-        margin: 0 18px;
-        @include border-1px(rgba(7, 17, 27, 0.1));
-        &:last-child{
-          @include border-1px(rgba(7, 17, 27, 0));
-        }
-      }
-      &__icon{
-        flex: 0 0 57px;
-        &-img{
-          width: 57px;
-          height: 57px;
-        }
-      }
-      &__content{
-        flex: 1;
-        margin-left: 10px;
-        &-name{
-          line-height: 14px;
-          font-size: 14px;
-          color: rgb(7, 17, 27);
-          margin-top: 2px;
-        }
-        &-kind, &-extra{
-          margin-top: 8px;
-          font-size: 10px;
-          color: rgb(147, 153, 159);
-        }
-        &-sell{
-          margin-right: 12px;
-        }
-        &-price{
-         margin-top: 8px;
-          font-size: 10px/14px;
-          font-weight: 700;
-          color: rgb(240, 20, 20);
-        }
-        &-oldPrice{
-          margin-left: 8px;
-          font-size: 10px;
-          font-weight: 700;
-          color:rgb(147, 153, 159) ;
-          text-decoration: line-through;
-        }
-      }
-      &__control{
-        position: absolute;
-        right: 18px;
-        bottom: 18px;
-      }
-    }
   }
   &__shopcart{
     position: fixed;
@@ -116,5 +54,74 @@
     height: 48px;
   }
 
+  .c-food{
+    &__title{
+      height: 26px;
+      line-height: 26px;
+      padding-left: 14px;
+      font-size: 12px;
+      color: rgb(147, 153, 159);
+      border-left: 4px solid #d9dde1;
+      background-color: #F3F5F7;
+    }
+    &__item{
+      display: flex;
+      padding: 18px 0;
+      margin: 0 18px;
+      @include border-1px(rgba(7, 17, 27, 0.1));
+      &:last-child{
+        @include border-1px(rgba(7, 17, 27, 0));
+      }
+    }
+    &__icon{
+      flex: 0 0 57px;
+      &-img{
+        width: 57px;
+        height: 57px;
+      }
+    }
+    &__content{
+      flex: 1;
+      margin-left: 10px;
+      &-name{
+        line-height: 14px;
+        font-size: 14px;
+        color: rgb(7, 17, 27);
+        margin-top: 2px;
+      }
+      &-kind, &-extra{
+        margin-top: 8px;
+        font-size: 10px;
+        color: rgb(147, 153, 159);
+      }
+      &-sell{
+        margin-right: 12px;
+      }
+      &-price{
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        color: rgb(240, 20, 20);
+      }
+      &-oldPrice{
+        margin-left: 8px;
+        font-size: 10px;
+        font-weight: 700;
+        color:rgb(147, 153, 159) ;
+        text-decoration: line-through;
 
+      }
+    }
+    &__control{
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+    }
+  }
+  .food-transition-enter-active, .food-transition-leave-active {
+    transition: all 0.4s linear;
+  }
+  .food-transition-enter, .food-transition-leave-to{
+    transform: translatex(100%);
+  }
 }

@@ -16,7 +16,7 @@
         <li class="l-goods__food-item c-food c-food-hook" v-for="item in goods" >
           <h1 class="c-food__title">{{item.name}}</h1>
           <ul>
-            <li class="c-food__item" v-for="food in item.foods">
+            <li class="c-food__item" v-for="food in item.foods" @click="selcetFood(food,$event)">
               <div class="c-food__icon">
                 <img :src="food.icon" class="c-food__icon-img">
               </div>
@@ -41,6 +41,9 @@
     <div class="l-goods__shopcart">
       <v-shopcart :delivery-price="seller.deliveryPrice" :min-price="seller.minPrice" :select-foods="selectFoods"></v-shopcart>
     </div>
+    <div class="l-goods__fooddetail">
+      <v-food :food="selectedFood" ref="food"></v-food>
+    </div>
   </div>
 </template>
 
@@ -48,6 +51,7 @@
   import shopcart from './shopcart.vue';
   import cartcontrol from '../common/cartcontrol.vue';
   import textIcon from '../common/textIcon.vue';
+  import food from './food.vue';
   import BScroll from 'better-scroll';
 
   const ERR_OK = 0;
@@ -65,7 +69,8 @@
       return {
         goods: [],
         listHeight: [],
-        scrollY: 0
+        scrollY: 0,
+        selectedFood: {}
       };
     },
     computed: {
@@ -112,7 +117,8 @@
     components: {
       'v-icon': textIcon,
       'v-shopcart': shopcart,
-      'v-cartcontrol': cartcontrol
+      'v-cartcontrol': cartcontrol,
+      'v-food': food
     },
     methods: {
 //      better-scroll绑定模块，及监听scroll事件
@@ -147,6 +153,15 @@
         let foodList = this.$refs.lGoodsFood.getElementsByClassName('c-food-hook');
         let el = foodList[index];
         this.foodScroll.scrollToElement(el, 1000);
+      },
+//      显示商品详情页
+      selcetFood (food, event) {
+        if (!event._constructed) {
+          return;
+        }
+        this.selectedFood = food;
+//        子组件索引，调用子组件方法show
+        this.$refs.food.show();
       }
     }
   };

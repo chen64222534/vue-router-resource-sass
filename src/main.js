@@ -6,7 +6,7 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import App from './App';
 import goods from 'components/goods';
-import ratings from 'components/ratings';
+import ratings from 'components/rating';
 import seller from 'components/seller';
 
 import './sass/main.css';

@@ -6,11 +6,13 @@
 @import "common/mixin";
 @import "common/star";
 @import "common/textIcon";
-@import "common/_cartcontrol";
+@import "common/cartcontrol";
+@import "common/split";
 
 /*components*/
 @import "components/App";
 @import "components/header";
 @import "components/goods";
 @import "components/shopcart";
-@import "components/_fooddetails";
+@import "components/food";
+@import "components/ratingselect";
