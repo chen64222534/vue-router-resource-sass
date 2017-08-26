@@ -58,11 +58,17 @@
 
   //  const POSITIVE = 0;
   //  const NEGATIVE = 1;
-  const ALL = 0;
+  const ALL = 2;
 
   export default{
     created () {
-      eventHub.$on('ratingtype.select', this._refresh);
+//      监听ratingselect按键状态变化
+      eventHub.$on('ratingtype', (type) => {
+        this.selectType = type;
+      });
+      eventHub.$on('onlycontent', (boolean) => {
+        this.onlyContent = boolean;
+      });
     },
     props: {
       food: {
@@ -73,7 +79,7 @@
       return {
         showFlag: false,
         selectType: ALL,
-        onlyContent: true,
+        onlyContent: false,
         desc: {
           all: '全部',
           positive: '推荐',
@@ -89,7 +95,7 @@
         this.showFlag = true;
 //        每次详情页开启，刷新数据
         this.selectType = ALL;
-        this.onlyContent = true;
+        this.onlyContent = false;
 
         this.$nextTick(() => {
           if (!this.foodScorll) {
