@@ -39,7 +39,7 @@
     left: 0;
     .icon-arrow_lift {
       display: block;
-      padding-left: 10px;
+      padding: 0 10px 10px;
       font-size: 12px;
       color: #FFFFFF;
     }
@@ -99,7 +99,7 @@
   &__rating{
     &-title{
       @extend .l-food__title;
-      padding: 18px 18px 6px;
+      padding: 18px 18px 0;
     }
   }
 

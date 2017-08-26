@@ -39,7 +39,7 @@
           <div class="l-food__rating">
             <h2 class="l-food__rating-title">商品评价</h2>
             <div class="l-food__ratings">
-              <v-ratingselect :ratings="food.ratings"></v-ratingselect>
+              <v-ratingselect :ratings="food.ratings" :select-type="selectType" :only-content="onlyContent" :desc="desc"></v-ratingselect>
             </div>
           </div>
         </div>
@@ -56,8 +56,13 @@
   import split from '../common/split.vue';
   import ratingselect from './ratingselect.vue';
 
+  //  const POSITIVE = 0;
+  //  const NEGATIVE = 1;
+  const ALL = 0;
+
   export default{
     created () {
+      eventHub.$on('ratingtype.select', this._refresh);
     },
     props: {
       food: {
@@ -66,12 +71,26 @@
     },
     data () {
       return {
-        showFlag: false
+        showFlag: false,
+        selectType: ALL,
+        onlyContent: true,
+        desc: {
+          all: '全部',
+          positive: '推荐',
+          negative: '吐槽'
+        }
       };
     },
     methods: {
+      _refresh (type) {
+        this.selectType = type;
+      },
       show () {
         this.showFlag = true;
+//        每次详情页开启，刷新数据
+        this.selectType = ALL;
+        this.onlyContent = true;
+
         this.$nextTick(() => {
           if (!this.foodScorll) {
             this.foodScroll = new BScroll(this.$refs.lFood, {
