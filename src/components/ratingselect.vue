@@ -21,15 +21,16 @@
         </span>
       </div>
       <div class="c-ratings__swtich">
-        <i class="icon-check_circle " :class="{'c-ratings__on':onlyContent}"
+        <i class="icon-check_circle " :class="{'c-ratings__on':myonlyContent}"
         @click="toggle($event)"></i>
         <span class="c-ratings__swtich-text">只看有内容评价</span>
       </div>
     </div>
-    <ul class="c-ratings__list">
-      <li class="c-ratings__item" v-for="rating in ratings">
+    <ul class="c-ratings__list" v-show="ratings.length">
+      <li class="c-ratings__item" v-for="rating in ratings"
+          v-if="ratingshow(rating.text,rating.rateType,myselectType)">
         <div class="c-ratings__item-time">
-          <span class="c-ratings__item-date">{{rating.rateTime}}</span>
+          <span class="c-ratings__item-date">{{ratingtime(rating.rateTime)}}</span>
         </div>
         <div class="c-ratings__item-content">
           <i :class="ratingicon(rating)"></i>
@@ -41,6 +42,9 @@
         </div>
       </li>
     </ul>
+    <div class="c-ratings__norating" v-show="!ratings.length">
+      还没有评价,快来评价吧！
+    </div>
   </div>
 </template>
 
@@ -96,7 +100,6 @@
           return rating.rateType === NEGATIVE;
         });
       }
-
     },
     methods: {
 //      返回评论图标类型类名
@@ -107,7 +110,7 @@
           return 'icon-thumb_up';
         }
       },
-//      按键切换
+//      根据按键类型切换
       select (type, event) {
         if (!event._constructed) {
           return;
@@ -115,14 +118,27 @@
         this.myselectType = type;
         eventHub.$emit('ratingtype', type);
       },
+//      根据按键内容切换
       toggle (event) {
         if (!event._constructed) {
           return;
         }
         this.myonlyContent = !this.myonlyContent;
         eventHub.$emit('onlycontent', this.myonlyContent);
+      },
+//      根据按键,切换评价类型
+      ratingshow (thistext, thistype, select) {
+        if ((select === 2) || thistype === select) {
+          if (!this.myonlyContent || thistext.length) {
+            return true;
+          }
+        }
+      },
+//      转化时间戳
+      ratingtime (time) {
+        let dt = new Date(time);
+        return (dt.getFullYear() + '-' + dt.getMonth() + '-' + dt.getDate() + ' ' + dt.getHours() + ':' + dt.getMinutes());
       }
-//      评价类型切换
     }
   };
 </script>

@@ -1,5 +1,5 @@
 .c-ratings{
-  height: 600px;
+  padding-bottom: 50px;
   &__type{
     padding:18px 0;
     margin: 0 18px;
@@ -100,5 +100,10 @@
   }
   &__on{
     color: #00c850;
+  }
+  &__norating{
+    padding: 18px;
+    font-size: 14px;
+    color: rgb(147, 153, 159);
   }
 }
