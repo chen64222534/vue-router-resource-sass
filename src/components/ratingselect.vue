@@ -26,30 +26,12 @@
         <span class="c-ratings__swtich-text">只看有内容评价</span>
       </div>
     </div>
-    <ul class="c-ratings__list" v-show="ratings.length">
-      <li class="c-ratings__item" v-for="rating in ratings"
-          v-if="ratingshow(rating.text,rating.rateType,myselectType)">
-        <div class="c-ratings__item-time">
-          <span class="c-ratings__item-date">{{ratingtime(rating.rateTime)}}</span>
-        </div>
-        <div class="c-ratings__item-content">
-          <i :class="ratingicon(rating)"></i>
-          <span class="c-ratings__item-text">{{rating.text}}</span>
-        </div>
-        <div class="c-ratings__item-user">
-          <span class="c-ratings__item-name">{{rating.username}}</span>
-          <img :src="rating.avatar" height="12" width="12" class="c-ratings__item-img">
-        </div>
-      </li>
-    </ul>
-    <div class="c-ratings__norating" v-show="!ratings.length">
-      还没有评价,快来评价吧！
-    </div>
   </div>
 </template>
 
 <script>
-  import { eventHub } from '../bus';
+  import { eventHub } from '../commonjs/bus';
+//  import BScroll from 'better-scroll';
   const POSITIVE = 0;
   const NEGATIVE = 1;
   const ALL = 2;
@@ -102,14 +84,6 @@
       }
     },
     methods: {
-//      返回评论图标类型类名
-      ratingicon (rating) {
-        if (rating.rateType === 1) {
-          return 'icon-thumb_down';
-        } else {
-          return 'icon-thumb_up';
-        }
-      },
 //      根据按键类型切换
       select (type, event) {
         if (!event._constructed) {
@@ -125,19 +99,6 @@
         }
         this.myonlyContent = !this.myonlyContent;
         eventHub.$emit('onlycontent', this.myonlyContent);
-      },
-//      根据按键,切换评价类型
-      ratingshow (thistext, thistype, select) {
-        if ((select === 2) || thistype === select) {
-          if (!this.myonlyContent || thistext.length) {
-            return true;
-          }
-        }
-      },
-//      转化时间戳
-      ratingtime (time) {
-        let dt = new Date(time);
-        return (dt.getFullYear() + '-' + dt.getMonth() + '-' + dt.getDate() + ' ' + dt.getHours() + ':' + dt.getMinutes());
       }
     }
   };

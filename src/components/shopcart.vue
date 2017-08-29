@@ -55,7 +55,7 @@
 <script>
   import cartcontrol from '../common/cartcontrol.vue';
   import BScroll from 'better-scroll';
-  import { eventHub } from '../bus';
+  import { eventHub } from '../commonjs/bus';
 
   export default{
     props: {

@@ -10,7 +10,7 @@
 
 <script>
   import Vue from 'vue';
-  import { eventHub } from '../bus';
+  import { eventHub } from '../commonjs/bus';
 
   export default{
     props: {
