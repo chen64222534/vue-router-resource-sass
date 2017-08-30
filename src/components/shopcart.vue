@@ -1,5 +1,4 @@
 <template>
-
   <div class="c-shopcart" @click="toggleCart">
     <transition name="mark-transition" >
       <div class="c-shopcart__mark" v-if="detailState"></div>
@@ -40,7 +39,6 @@
         {{payState}}
       </div>
     </div>
-
     <div class="c-shopcart__balls">
       <transition v-for="ball in balls" :key="ball.show" name="ball-transition" @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
         <div class="c-shopcart__ball" v-show="ball.show">
@@ -48,7 +46,6 @@
         </div>
       </transition>
     </div>
-
   </div>
 </template>
 

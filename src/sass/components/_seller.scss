@@ -1,0 +1,146 @@
+.l-seller{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top:180px;
+  bottom: 0;
+  overflow: hidden;
+
+  &__name{
+    line-height: 14px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: rgb(7, 17, 27);
+  }
+  &__shop{
+    position: relative;
+    padding: 0 18px;
+    &-title{
+      padding: 18px 0;
+      @include border-1px(rgba(7, 17, 27, 0.1));
+    }
+    &-star{
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    &-ratingCount{
+      display: inline-block;
+      line-height: 16px;
+      font-size: 10px;
+      color: rgb(77, 85, 93);
+    }
+    &-sellCount{
+      @extend .l-seller__shop-ratingCount;
+    }
+
+    &-desc{
+      display: flex;
+      padding: 18px 0;
+    }
+    &-item{
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid rgba(7, 17, 27, 0.1);
+      &:last-child{
+        border: none;
+      }
+    }
+    &-caption{
+      line-height: 24px;
+      font-size: 10px;
+      font-weight: 200;
+      color: rgb(7, 17, 27);
+    }
+    &-number{
+      font-size: 24px;
+      font-weight: 200;
+      color: rgb(7, 17, 27);
+    }
+    &-unit{
+      font-size: 10px;
+      font-weight: 200;
+      color: rgb(7, 17, 27);
+    }
+  }
+  //收藏按键
+  &__collect{
+    position: absolute;
+    left: 0;
+    top:0;
+  }
+
+  &__notice{
+    padding: 0 18px;
+    &-title{
+      padding: 18px 0;
+      @include border-1px(rgba(7, 17, 27, 0.1));
+    }
+    &-text{
+      line-height: 24px;
+      padding: 0 12px;
+      font-size: 12px;
+      font-weight: 200;
+      color: rgb(240, 20, 20);
+    }
+    &-item{
+      padding: 16px 12px;
+      @include border-1px(rgba(7, 17, 27, 0.1));
+      &:last-child{
+        @include border-1px(rgba(7, 17, 27, 0));
+      }
+    }
+    &-icon{
+      display: inline-block;
+    }
+    &-introduce{
+      display: inline-block;
+      vertical-align: top;
+      line-height: 16px;
+      font-size: 12px;
+      font-weight: 200;
+      color: rgb(7, 17, 27);
+    }
+  }
+
+  &__overview{
+    padding: 18px;
+    &-pic{
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  &__pics{
+    font-size: 0;
+  }
+  &__pic{
+   display: inline-block;
+    margin-right: 6px;
+    width: 120px;
+    height: 90px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
+  &__details{
+    padding:18px;
+    &-name{
+      padding-bottom: 12px;
+      @extend .l-seller__name;
+      @include border-1px(rgba(7, 17, 27, 0.1));
+    }
+    &-item{
+      padding: 16px 12px;
+      line-height: 16px;
+      font-size: 12px;
+      font-weight: 200;
+      color: rgb(7, 17, 27);
+      @include border-1px(rgba(7, 17, 27, 0.1));
+      &:last-child{
+        border: none;
+      }
+    }
+  }
+
+}

@@ -48,11 +48,13 @@
 </template>
 
 <script>
+  import Vue from 'vue';
   import shopcart from './shopcart.vue';
   import cartcontrol from '../common/cartcontrol.vue';
   import textIcon from '../common/textIcon.vue';
   import food from './food.vue';
   import BScroll from 'better-scroll';
+//  import { eventHub } from '../commonjs/bus';
 
   const ERR_OK = 0;
 
@@ -95,6 +97,8 @@
             }
           });
         });
+//        eventHub.$emit('select-num', foods);
+        Vue.set(this.seller, 'selectFoods', foods);
         return foods;
       }
     },

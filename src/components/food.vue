@@ -43,7 +43,7 @@
             </div>
             <ul class="l-food__list" v-show="food.ratings.length">
               <li class="l-food__item" v-for="rating in food.ratings"
-                  v-if="ratingshow(rating.text,rating.rateType,selectType)">
+                  v-if="ratingshow(rating.text,rating.rateType)">
                 <div class="l-food__item-time">
                   <span class="l-food__item-date">{{rating.rateTime | ratingtime}}</span>
                 </div>
@@ -175,8 +175,8 @@
         }
       },
 //      根据按键,切换评价类型
-      ratingshow (thistext, thistype, select) {
-        if ((select === 2) || thistype === select) {
+      ratingshow (thistext, thistype) {
+        if (this.selectType === 2 || thistype === this.selectType) {
           if (!this.onlyContent || thistext.length) {
             return true;
           }
