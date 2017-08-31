@@ -1242,8 +1242,22 @@ body {
       color: #07111b; }
   .l-seller__collect {
     position: absolute;
-    left: 0;
-    top: 0; }
+    right: 18px;
+    top: 18px;
+    width: 30px;
+    height: 44px; }
+    .l-seller__collect-text {
+      line-height: 10px;
+      font-size: 10px;
+      color: #4d555d; }
+    .l-seller__collect .icon-favorite {
+      display: block;
+      line-height: 24px;
+      margin-bottom: 4px;
+      font-size: 24px;
+      color: #d3d5d8; }
+      .l-seller__collect .icon-favorite.active {
+        color: #f01414; }
   .l-seller__notice {
     padding: 0 18px; }
     .l-seller__notice-title {

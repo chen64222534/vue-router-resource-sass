@@ -65,8 +65,28 @@
   //收藏按键
   &__collect{
     position: absolute;
-    left: 0;
-    top:0;
+    right: 18px;
+    top:18px;
+    width: 30px;
+    height: 44px;
+
+    &-text{
+      line-height: 10px;
+      font-size: 10px;
+      color: rgb(77, 85, 93);
+    }
+    .icon-favorite{
+      display: block;
+      line-height: 24px;
+      margin-bottom: 4px;
+      font-size: 24px;
+      color:rgb(211, 213, 216);
+      &.active{
+        color: rgb(240, 20, 20);
+      }
+    }
+
+
   }
 
   &__notice{

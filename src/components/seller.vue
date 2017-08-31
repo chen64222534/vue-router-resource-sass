@@ -29,8 +29,9 @@
             <span class="l-seller__shop-unit">元</span>
           </div>
         </div>
-        <div class="l-seller__collect">
-
+        <div class="l-seller__collect" @click="collectToggle">
+          <span class="icon-favorite" :class="{'active':collectState}"></span>
+          <span class="l-seller__collect-text">{{collecttext}}</span>
         </div>
       </div>
       <v-split></v-split>
@@ -51,8 +52,8 @@
       <v-split></v-split>
       <div class="l-seller__overview">
         <div class="l-seller__name">商家实景</div>
-        <div class="l-seller__overview-pic" ref="pic">
-          <ul class="l-seller__pics">
+        <div class="l-seller__overview-pic" ref="picScroll">
+          <ul class="l-seller__pics" ref="picsList">
             <li class="l-seller__pic" v-for="img in seller.pics">
               <img :src="img" width="120" height="90">
             </li>
@@ -83,14 +84,26 @@
         type: Object
       }
     },
+    data () {
+      return {
+        collectState: false
+      };
+    },
 //    生命周期页面全部加载完成后，调用方法
     mounted () {
       this._initScroll();
+      this._initpicsScroll();
     },
     watch: {
 //      监听数据变化，然后调用函数，绑定better-scroll
       seller: function () {
         this._initScroll();
+        this._initpicsScroll();
+      }
+    },
+    computed: {
+      collecttext () {
+        return this.collectState ? '已收藏' : '收藏';
       }
     },
     components: {
@@ -105,14 +118,33 @@
             this.sellerScroll = new BScroll(this.$refs.lSeller, {
               click: true
             });
-            this.picScroll = new BScroll(this.$refs.pic, {
-              click: true,
-              scrollX: true
-            });
           } else {
             this.sellerScroll.refresh();
           }
         });
+      },
+      _initpicsScroll () {
+        if (this.seller.pics) {
+          let picWidth = 120;
+          let margin = 6;
+          let listWidth = (picWidth + margin) * this.seller.pics.length - margin;
+          this.$refs.picsList.style.width = listWidth + 'px';
+        }
+        if (!this.picsScroll) {
+          this.picsScroll = new BScroll(this.$refs.picScroll, {
+            scrollX: true,
+//            piclist横向滚动的同时，还保留上下滚动
+            eventPassthrough: 'vertical'
+          });
+        } else {
+          this.picsScroll.refresh();
+        }
+      },
+      collectToggle (event) {
+        if (!event._constructed) {
+          return;
+        }
+        this.collectState = !this.collectState;
       }
     }
   };

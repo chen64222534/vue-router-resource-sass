@@ -20,17 +20,24 @@
 
 <script>
   import header from './components/header.vue';
+  import { urlParse } from './commonjs/url';
 
   const ERR_OK = 0;
 
   export default {
     data () {
       return {
-        seller: {}
+        seller: {
+          id: (() => {
+            let queryParam = urlParse();
+            return queryParam.id;
+          })()
+        }
       };
     },
     created () {
-      this.$http.get('/api/seller').then((response) => {
+//      真实情况下根据不同商家的ID，从后台获取不同的商家数据
+      this.$http.get('/api/seller?id' + this.seller.id).then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
           this.seller = response.data;
