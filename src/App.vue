@@ -12,7 +12,10 @@
         <router-link to="/seller">商家</router-link>
       </div>
     </div>
-    <router-view :seller="seller"></router-view>
+
+    <keep-alive>
+      <router-view :seller="seller"></router-view>
+    </keep-alive>
 
   </div>
 
@@ -40,8 +43,9 @@
       this.$http.get('/api/seller?id' + this.seller.id).then((response) => {
         response = response.body;
         if (response.errno === ERR_OK) {
-          this.seller = response.data;
-//          console.log(this.seller);
+//          es6,在对象上添加属性和方法
+          this.seller = Object.assign({}, this.seller, response.data);
+//          this.seller = response.data;
         }
       }, (response) => {
       }

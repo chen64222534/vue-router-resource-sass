@@ -73,6 +73,7 @@
 
 <script>
   import BScroll from 'better-scroll';
+  import { saveToLocal, loadFromLocal } from '../commonjs/store';
 
   import split from '../common/split.vue';
   import star from '../common/star.vue';
@@ -86,7 +87,9 @@
     },
     data () {
       return {
-        collectState: false
+        collectState: (() => {
+          return loadFromLocal(this.seller.id, 'collect', true);
+        })()
       };
     },
 //    生命周期页面全部加载完成后，调用方法
@@ -145,6 +148,7 @@
           return;
         }
         this.collectState = !this.collectState;
+        saveToLocal(this.seller.id, 'collect', this.collectState);
       }
     }
   };

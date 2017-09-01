@@ -1,6 +1,5 @@
 <template>
   <div class="l-goods">
-
     <div class="l-goods__sidebar" ref="lGoodsSidebar">
       <ul>
         <li class="l-goods__sidebar-item" v-for="(item, index) in goods" :class="{'active':currentIndex===index}" @click="clickSidebar(index, $event)">
